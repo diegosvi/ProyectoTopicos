@@ -1,0 +1,113 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      LA DULZURA DEL MAR
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-slides pager>
+
+    <ion-slide style="background-color: green">
+      <h2>Slide 1</h2>
+    </ion-slide>
+
+    <ion-slide style="background-color: blue">
+      <h2>Slide 2</h2>
+    </ion-slide>
+
+    <ion-slide style="background-color: red">
+      <h2>Slide 3</h2>
+    </ion-slide>
+
+  </ion-slides>
+<div>
+  <ion-card>
+    <img src="assets/img/2.jpg" (click)="irProductos()"/>
+    <ion-card-content>
+      <ion-card-title>
+        Mariscos
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+</div>
+  <ion-card>
+    <img src="assets/img/1.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        Pescados
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/img/2.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        Ceviches
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/img/3.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        Arroces
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/img/4.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        Combos
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/img/5.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        Bebidas
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/img/7.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        Postres
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+ <!-- <h3>Ionic Menu Starter</h3>
+
+  <p>
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+  </p>
+
+  <button ion-button secondary menuToggle>Toggle Menu</button>-->
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
