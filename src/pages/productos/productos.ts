@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Platform, IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the ProductosPage page.
@@ -14,7 +14,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProductosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  fish: string = "pescado";
+  isAndroid: boolean = false;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform) {
+      this.isAndroid = platform.is('android');
   }
 
   ionViewDidLoad() {

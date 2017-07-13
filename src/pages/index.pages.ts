@@ -3,3 +3,4 @@
  */
 export {PrincipalPage} from './principal/principal';
 export {ProductosPage} from './productos/productos';
+export {PromocionesPage} from './promociones/promociones';

@@ -6,7 +6,7 @@
     </button>
 
     <ion-title>
-      LA DULZURA DEL MAR
+      AL CARBON Y MAR
     </ion-title>
 
     <ion-buttons end>
@@ -21,67 +21,104 @@
 <ion-content padding>
   <ion-slides pager>
 
-    <ion-slide style="background-color: green">
-      <h2>Slide 1</h2>
+    <ion-slide style="background-color: #e6e6e6">
+      <div><ion-card>
+      <img src="assets/img/slide.png" width="80"/>
+      </ion-card>
+      </div>
     </ion-slide>
 
-    <ion-slide style="background-color: blue">
-      <h2>Slide 2</h2>
+    <ion-slide style="background-color: #e6e6e6">
+      <div>
+      <ion-card>
+      <img src="assets/img/slide2.jpg" width="80"/>
+      </ion-card>
+      </div>
     </ion-slide>
 
-    <ion-slide style="background-color: red">
-      <h2>Slide 3</h2>
+    <ion-slide style="background-color: #e6e6e6" >
+      <div><ion-card>
+      <img src="assets/img/slide3.png" width="80"/>
+      </ion-card>
+      </div>
     </ion-slide>
 
   </ion-slides>
-<div>
-  <ion-card>
-    <img src="assets/img/2.jpg" (click)="irProductos()"/>
-    <ion-card-content>
-      <ion-card-title>
-        Mariscos
-      </ion-card-title>
-    </ion-card-content>
-  </ion-card>
-</div>
-  <ion-card>
-    <img src="assets/img/1.jpg"/>
-    <ion-card-content>
-      <ion-card-title>
-        Pescados
-      </ion-card-title>
-    </ion-card-content>
-  </ion-card>
+
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <div><ion-card>
+        <img width="30" height="200" src="assets/img/2.jpg" (click)="irProductos()"/>
+        <ion-card-content>
+          <ion-card-title>
+            Pescados
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card></div>
+    </ion-col>
+
+    <ion-col>
+      <div><ion-card >
+        <img width="30" height="200" src="assets/img/1.jpg" />
+        <ion-card-content>
+          <ion-card-title>
+            Mariscos
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card></div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <div> <ion-card>
+        <img width="30" height="200" src="assets/img/3.jpg"/>
+        <ion-card-content>
+          <ion-card-title>
+            Ceviches
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card></div>
+    </ion-col>
+
+    <ion-col>
+      <div><ion-card>
+        <img width="30" height="200" src="assets/img/4.jpg"/>
+        <ion-card-content>
+          <ion-card-title>
+            Arroces
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card></div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div><ion-card>
+        <img width="30" height="200" src="assets/img/5.jpg"/>
+        <ion-card-content>
+          <ion-card-title>
+            Combos
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card></div>
+    </ion-col>
+
+    <ion-col>
+      <div><ion-card>
+        <img width="30" height="200" src="assets/img/7.jpg"/>
+        <ion-card-content>
+          <ion-card-title>
+            Postres
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card></div>
+    </ion-col>
+  </ion-row>
 
   <ion-card>
-    <img src="assets/img/2.jpg"/>
-    <ion-card-content>
-      <ion-card-title>
-        Ceviches
-      </ion-card-title>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/img/3.jpg"/>
-    <ion-card-content>
-      <ion-card-title>
-        Arroces
-      </ion-card-title>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/img/4.jpg"/>
-    <ion-card-content>
-      <ion-card-title>
-        Combos
-      </ion-card-title>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/img/5.jpg"/>
+    <img src="assets/img/6.jpg"/>
     <ion-card-content>
       <ion-card-title>
         Bebidas
@@ -89,14 +126,9 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
-    <img src="assets/img/7.jpg"/>
-    <ion-card-content>
-      <ion-card-title>
-        Postres
-      </ion-card-title>
-    </ion-card-content>
-  </ion-card>
+
+
+</ion-grid>
  <!-- <h3>Ionic Menu Starter</h3>
 
   <p>
