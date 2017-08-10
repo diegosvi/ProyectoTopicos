@@ -1,0 +1,34 @@
+
+<h4>Categorias <small>Nuevas</small></h4>
+<hr>
+
+<div class="row">
+  <div class="col-sm-6">
+    <button [routerLink]="['/categoriasp']"
+            type="button" class="btn btn-info"><<</button>
+  </div>
+  <!--<div class="col-sm-6 text-right">-->
+  <!--<button [routerLink]="['/pokemon','nuevo']"-->
+  <!--type="button" class="btn btn-success">Limpiar</button>-->
+  <!--</div>-->
+</div>
+
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <form (ngSubmit)="guardar()" #form="ngForm">
+      <div class="form-group row">
+        <label  class="col-2 col-form-label">Nombre: </label>
+        <div class="col-10">
+          <input class="form-control" type="text" placeholder="Sanduche Estudiantil" name="nombre" [(ngModel)]="categoriap.nombre">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button  type="submit" class="btn btn-outline-primary">Guardar Cambios</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+

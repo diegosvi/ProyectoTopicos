@@ -1,0 +1,36 @@
+
+<h1>Menu</h1>
+<hr>
+<div class="row">
+  <div class="col-md-12 text-right">
+    <button [routerLink]="['/menu','nuevo']"
+            type="button" class="btn btn-primary">+</button>
+  </div>
+</div>
+<br>
+<table class="table">
+  <thead class="table-inverse">
+  <tr>
+    <th>#</th>
+    <th>Imagen</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Precio</th>
+    <th>Tipo</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let menu of menus; let i=index">
+    <th>{{i+1}}</th>
+    <th><img class="img" [src]="menu.image"></th>
+    <th>{{menu.nombre}}</th>
+    <th>{{menu.descripcion}}</th>
+    <th>{{menu.precio}}</th>
+    <th>{{menu.tipo}}</th>
+    <th>
+      <button [routerLink]="['/menu', menu.id ]" type="button" class="btn btn-outline-primary">Editar</button>
+      <button (click)="eliminarSails(menu.id, i) "type="button" class="btn btn-outline-danger">Eliminar</button>
+    </th>
+  </tr>
+  </tbody>
+</table>

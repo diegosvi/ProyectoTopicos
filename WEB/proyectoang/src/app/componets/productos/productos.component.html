@@ -1,0 +1,37 @@
+
+<h1>Producto</h1>
+<hr>
+<div class="row">
+  <div class="col-md-12 text-right">
+    <button [routerLink]="['/producto','nuevo']"
+            type="button" class="btn btn-primary">+</button>
+  </div>
+</div>
+<br>
+<table class="table">
+  <thead class="table-inverse">
+  <tr>
+    <th>#</th>
+    <th>Imagen</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Precio</th>
+    <th>Categoria</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let producto of productos; let i=index">
+    <th>{{i+1}}</th>
+    <th><img class="img" [src]="producto.image"></th>
+    <th>{{producto.nombre}}</th>
+    <th>{{producto.descripcion}}</th>
+    <th>{{producto.precio}}</th>
+    <th>{{producto.categoria}}</th>
+    <th>
+      <button [routerLink]="['/producto', producto.id ]" type="button" class="btn btn-outline-primary">Editar</button>
+      <button (click)="eliminarSails(producto.id, i) "type="button" class="btn btn-outline-danger">Eliminar</button>
+    </th>
+  </tr>
+  </tbody>
+</table>
+

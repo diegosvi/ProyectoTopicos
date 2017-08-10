@@ -1,0 +1,206 @@
+<div class="tab-content">
+<div class="tab-pane active" id="nproducto" role="tabpanel">
+  <h4>Productos <small>Nuevos</small></h4>
+  <hr>
+  <div class="card" style="width: 20rem;">
+  <img class="card-img-top imgcart" [src]="producto.image" alt="Card image cap">
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <button [routerLink]="['/productos']"
+              type="button" class="btn btn-info"><<</button>
+    </div>
+    <!--<div class="col-sm-6 text-right">-->
+    <!--<button [routerLink]="['/pokemon','nuevo']"-->
+    <!--type="button" class="btn btn-success">Limpiar</button>-->
+    <!--</div>-->
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <form (ngSubmit)="guardar()" #form="ngForm" novalidate>
+        <div class="form-group row" [ngClass]="{'has-danger': (nombre.errors?.required || nombre.errors?.minlength) && nombre.touched }">
+          <label  class="col-2 col-form-label">Nombre: </label>
+          <div class="col-10">
+            <input class="form-control" type="text"  required minlength="3" placeholder="Sanduche Estudiantil" name="nombre" #nombre="ngModel" [(ngModel)]="producto.nombre">
+            <div class="form-control-feedback" *ngIf="nombre.errors?.required">
+              Este campo es obligatorio
+            </div>
+            <div class="form-control-feedback" *ngIf="nombre.errors?.minlength">
+              El tama;o minimo es de 3 caracteres
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group row" >
+          <label  class="col-2 col-form-label">Descripcion: </label>
+          <div class="col-10">
+            <input class="form-control" type="text" placeholder="descripcion" name="descripcion" [(ngModel)]="producto.descripcion">
+          </div>
+        </div>
+
+        <div class="form-group row" [ngClass]="{'has-danger': (precio.errors?.required) && precio.touched }">
+          <label  class="col-2 col-form-label">Precio: </label>
+          <div class="col-10">
+            <input class="form-control" type="text" required minlength="3" placeholder="2.50" name="precio" #precio="ngModel" [(ngModel)]="producto.precio">
+
+
+            <div class="form-control-feedback" *ngIf="precio.errors?.required">
+              Este campo es obligatorio
+            </div>
+            <div class="form-control-feedback" *ngIf="precio.errors?.minlength">
+              El tama;o minimo es de 3 caracteres
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row" [ngClass]="{'has-danger': (categoria.errors?.required) && categoria.touched }">
+          <label  class="col-2 col-form-label">Categoria: </label>
+          <div class="col-10">
+            <select class=" form-control custom-select mb-2 mr-sm-2 mb-sm-0" required name="categoria" #categoria="ngModel" [(ngModel)]="producto.categoria">
+              <option value="Plato">Comidas</option>
+              <option value="Postres">Postres</option>
+              <option value="Bebidas">Bebidas</option>
+              <option value="Sanduches">Sanduches</option>
+              <option value="Snacks">Snacks</option>
+            </select>
+            <div class="form-control-feedback" *ngIf="categoria.errors?.required">
+              Este campo es obligatorio
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group row">
+          <label  class="col-2 col-form-label">Imagen: </label>
+          <div class="col-10 ">
+            <input class="form-control" type="text" placeholder="https://umeepn.files.wordpress.com/2015/11/dulcini.jpg"
+                   name="image" #image="ngModel" [(ngModel)]="producto.image">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button  type="submit" class="btn btn-outline-primary">Guardar Cambios</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<!--<form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate>-->
+
+  <!--<div class="row">-->
+    <!--<div class="col-sm-6">-->
+      <!--<button [routerLink]="['/productos']"-->
+              <!--type="button" class="btn btn-info"><<</button>-->
+    <!--</div>-->
+    <!--<div class="col-sm-6 text-right">-->
+      <!--<button [routerLink]="['/producto','nuevo']"-->
+              <!--type="button" class="btn btn-success">Limpiar</button>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--<div>-->
+
+    <!--<div class="form-group row " [ngClass]="{'has-danger': (nombre.errors?.required ||  nombre.errors?.minLength) && (nombre.touched )}">-->
+      <!--<label class="col-2 col-form-label">Nombre</label>-->
+      <!--<div class="col-8">-->
+
+        <!--<input class="form-control"-->
+               <!--type="text"-->
+               <!--placeholder="Nombre"-->
+               <!--required-->
+               <!--mainlength="3"-->
+               <!--name="nombre"-->
+               <!--[(ngModel)]="producto.nombre" >-->
+        <!--<div class="form-control-feedback" *ngIf="nombre.errors?.required" >Este campo es obligatorio</div>-->
+        <!--<div class="form-control-feedback" *ngIf="nombre.errors?.minlength" >minimo 3 carcteres</div>-->
+
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="form-group row " [ngClass]="{'has-danger': (descripcion.errors?.required ||  descripcion.errors?.minLength) && (descripcion.touched )}">-->
+      <!--<label class="col-2 col-form-label">Descripcion</label>-->
+      <!--<div class="col-8">-->
+
+        <!--<input class="form-control"-->
+               <!--type="text"-->
+               <!--placeholder="Descripcion"-->
+               <!--required-->
+               <!--mainlength="3"-->
+               <!--name="descripcion"-->
+               <!--[(ngModel)]="producto.descripcion" >-->
+        <!--<div class="form-control-feedback" *ngIf="descripcion.errors?.required" >Este campo es obligatorio</div>-->
+        <!--<div class="form-control-feedback" *ngIf="descripcion.errors?.minlength" >tama;o minimo de 3 carcteres</div>-->
+
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="form-group row " [ngClass]="{'has-danger': (costo.errors?.required) && (costo.touched )}">-->
+      <!--<label class="col-2 col-form-label">Costo</label>-->
+      <!--<div class="col-8">-->
+
+        <!--<input class="form-control"-->
+               <!--type="text"-->
+               <!--placeholder="Costo"-->
+               <!--required-->
+               <!--mainlength="3"-->
+               <!--name="costo"-->
+               <!--[(ngModel)]="producto.costo" >-->
+        <!--<div class="form-control-feedback" *ngIf="costo.errors?.required" >Este campo es obligatorio</div>-->
+
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="form-group row " [ngClass]="{'has-danger': (tipo.errors?.required ||  tipo.errors?.minLength) && (tipo.touched )}">-->
+      <!--<label class="col-2 col-form-label">Tipo</label>-->
+      <!--<div class="col-8">-->
+          <!--<select class=" form-control custom-select mb-2 mr-sm-2 mb-sm-0" name="tipo" [(ngModel)]="producto.tipo">-->
+            <!--<option value="Fuego">Fuego</option>-->
+            <!--<option value="Agua">Agua</option>-->
+            <!--<option value="Hierba">Hierba</option>-->
+          <!--</select>-->
+        <!--<div class="form-control-feedback" *ngIf="nombre.errors?.required" >Este campo es obligatorio</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="form-group">-->
+      <!--<label for="imagen">Imagen</label>-->
+      <!--<input type="email"-->
+             <!--class="form-control"-->
+             <!--id="imagen"-->
+             <!--name="url"-->
+             <!--[(ngModel)]="producto.url"-->
+             <!--placeholder="Ingresa la imagen">-->
+    <!--</div>-->
+
+  <!--</div>-->
+
+
+
+
+  <!--<div class="form-group row">-->
+    <!--<label class="col-2 col-form-label">&nbsp;</label>-->
+    <!--<div class="input-group col-md-8">-->
+      <!--<button type="submit" class="btn btn-outline-primary" [disabled]="!(forma.valid && habilitado)"   >-->
+        <!--Guardar-->
+      <!--</button>-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash;  <div class="row">-->
+        <!--<button (click)="regresar()" class="btn btn-success " type="button"> Pokemons</button>-->
+      <!--</div>&ndash;&gt;-->
+  <!--</div>-->
+
+
+
+
+<!--</form>-->

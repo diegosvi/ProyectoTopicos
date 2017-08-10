@@ -1,0 +1,28 @@
+<h1>Categorias productos</h1>
+<hr>
+<div class="row">
+  <div class="col-md-12 text-right">
+    <button [routerLink]="['/categoriap','nuevo']"
+            type="button" class="btn btn-primary">+</button>
+  </div>
+</div>
+<br>
+<table class="table">
+  <thead class="table-inverse">
+  <tr>
+    <th>#</th>
+    <th>Nombre</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let categoria of categoriasp; let i=index">
+    <th>{{i+1}}</th>
+    <th>{{categoria.nombre}}</th>
+
+    <th>
+      <button [routerLink]="['/categoriap', categoria.id ]" type="button" class="btn btn-outline-primary">Editar</button>
+      <button (click)="eliminarSails(categoria.id, i) "type="button" class="btn btn-outline-danger">Eliminar</button>
+    </th>
+  </tr>
+  </tbody>
+</table>

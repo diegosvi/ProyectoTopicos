@@ -1,0 +1,85 @@
+
+    <h4>Menus <small>Nuevos</small></h4>
+    <hr>
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top imgcart" [src]="menu.image" alt="Card image cap">
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <button [routerLink]="['/menus']"
+                type="button" class="btn btn-info"><<</button>
+      </div>
+
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <form (ngSubmit)="guardar()" #form="ngForm" novalidate>
+          <div class="form-group row" [ngClass]="{'has-danger': (nombre.errors?.required || nombre.errors?.minlength) && nombre.touched}">
+            <label  class="col-2 col-form-label">Nombre: </label>
+            <div class="col-10">
+              <input class="form-control" type="text" required placeholder="Sanduche Estudiantil" name="nombre" #nombre="ngModel" [(ngModel)]="menu.nombre">
+              <div class="form-control-feedback" *ngIf="nombre.errors?.required">
+                Este campo es obligatorio
+              </div>
+              <div class="form-control-feedback" *ngIf="nombre.errors?.minlength">
+                El tama;o minimo es de 3 caracteres
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label  class="col-2 col-form-label">Descripcion: </label>
+            <div class="col-10">
+              <input class="form-control" type="text"  placeholder="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="menu.descripcion">
+              <div class="form-control-feedback" *ngIf="descripcion.errors?.required">
+                Este campo es obligatorio
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row" [ngClass]="{'has-danger': (precio.errors?.required) && precio.touched }">
+            <label  class="col-2 col-form-label">Precio: </label>
+            <div class="col-10">
+              <input class="form-control" type="text" required placeholder="2.50" name="precio" #precio="ngModel" [(ngModel)]="menu.precio">
+              <div class="form-control-feedback" *ngIf="precio.errors?.required">
+                Este campo es obligatorio
+              </div>
+
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label  class="col-2 col-form-label">Tipo: </label>
+            <div class="col-10">
+              <select class=" form-control custom-select mb-2 mr-sm-2 mb-sm-0" name="tipo" #tipo="ngModel" [(ngModel)]="menu.tipo">
+                <option value="Plato">Plato Fuerte</option>
+                <option value="Postres">Postres</option>
+                <option value="Bebidas">Bebidas</option>
+              </select>
+              <div class="form-control-feedback" *ngIf="tipo.errors?.required">
+                Este campo es obligatorio
+              </div>
+
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label  class="col-2 col-form-label">Imagen: </label>
+            <div class="col-10 ">
+              <input class="form-control" type="text" placeholder="https://umeepn.files.wordpress.com/2015/11/dulcini.jpg"
+                     name="image" [(ngModel)]="menu.image">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button  type="submit" class="btn btn-outline-primary">Guardar Cambios</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+

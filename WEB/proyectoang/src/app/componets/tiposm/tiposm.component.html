@@ -1,0 +1,28 @@
+<h1>Categorias menus</h1>
+<hr>
+<div class="row">
+  <div class="col-md-12 text-right">
+    <button [routerLink]="['/tipom','nuevo']"
+            type="button" class="btn btn-primary">+</button>
+  </div>
+</div>
+<br>
+<table class="table">
+  <thead class="table-inverse">
+  <tr>
+    <th>#</th>
+    <th>Nombre</th>
+    <th>Fecha</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let tipo of tiposm; let i=index">
+    <th>{{i+1}}</th>
+    <th>{{tipo.nombre}}</th>
+    <th>
+      <button [routerLink]="['/tipom', tipo.id ]" type="button" class="btn btn-outline-primary">Editar</button>
+      <button (click)="eliminarSails(tipo.id, i) "type="button" class="btn btn-outline-danger">Eliminar</button>
+    </th>
+  </tr>
+  </tbody>
+</table>
